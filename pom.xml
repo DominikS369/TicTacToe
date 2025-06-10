@@ -15,51 +15,13 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
+            <version>5.13.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
-    <dependency>
-            <groupId>org.junit.jupter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.13.1</version>
-            <scope>test</scope>
-    </dependency>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.3</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.6.0</version>
-                <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>validate</phase> //jetzt wird check ausgeführt sobald validate ausgeführt wird
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 
 
     <build>
@@ -78,7 +40,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>validate</phase>
+                        <phase>validate</phase> <!-- //jetzt wird check ausgeführt sobald validate ausgeführt wird -->
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -87,5 +49,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
