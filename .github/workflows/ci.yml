@@ -1,0 +1,24 @@
+name: Feature Branch CI
+
+on:
+  push:
+    branches:
+      - "feature/*"
+
+# neuer Linux server wirld hier aufgesetzt und nach abschluss gelöscht
+jobs:
+  build-and-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: INstall Java
+        uses: actions/setup-java@4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build and Test with Maven
+        run: mvn -B test --file pom.xml
