@@ -1,21 +1,32 @@
+
 package org.example;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TicTacToeTest {
+class TicTacToeAccessTest {
 
-   @Test
-    void when_1_plus_1_then_sum_2() {
+    private TicTacToe game;
 
-       //Arrange
+    @BeforeEach
+    void setUp() {
+        game = new TicTacToe();
+    }
 
+    @Test
+    void testGetBoardReturnsSameInstance() {
+        Board board = game.getBoard();
+        assertNotNull(board);
+        board.place(1, 1, 'x');
+        assertEquals('x', game.getBoard().getCell(1, 1));
+    }
 
-       //Act
-
-
-       //Assert
-
+    @Test
+    void testSetAndGetCurrentPlayer() {
+        Player newPlayer = new Player('o');
+        game.setCurrentPlayer(newPlayer);
+        assertEquals('o', game.getCurrentPlayer().getMarker());
     }
 }
