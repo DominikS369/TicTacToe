@@ -28,11 +28,6 @@ public class TicTacToe {
             int row = scanner.nextInt();
             int col = scanner.nextInt();
 
-            if (!board.isCellEmpty(row, col)) {
-                System.out.println("Feld bereits belegt! Bitte erneut wählen.");
-                continue;
-            }
-
             board.place(row, col, currentPlayer.getMarker());
             board.print();
 
