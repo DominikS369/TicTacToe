@@ -11,10 +11,7 @@ public class Board {
     }
 
     public boolean isCellEmpty(int x, int y){
-        if(x < 3 && x >= 0 && y < 3 && y >= 0){
-            return cells[x][y] == '\0';
-        }
-        return false;
+        return cells[x][y] == '\0';
     }
 
     public void place(int x, int y, char marker){
