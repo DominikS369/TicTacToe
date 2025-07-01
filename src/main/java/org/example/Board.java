@@ -45,7 +45,8 @@ public class Board {
         for (int i = 0; i < cells.length; i++) {
             System.out.print("|");
             for (int j = 0; j < cells[i].length; j++) {
-                System.out.print(" " + (cells[i][j] != 'x' || cells[i][j] != 'o' ? " " : cells[i][j]) + " |");
+                System.out.print(" " +
+                        (cells[i][j] != 'x' || cells[i][j] != 'o' ? " " : cells[i][j]) + " |");
             }
             System.out.println();
             System.out.println(lines);
