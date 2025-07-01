@@ -28,6 +28,11 @@ public class TicTacToe {
             int row = scanner.nextInt();
             int col = scanner.nextInt();
 
+            if (row < 0 || row > 2 || col < 0 || col > 2) {
+                System.out.println("Ungültige Eingabe! Werte müssen zwischen 0 und 2 liegen.");
+                continue;
+            }
+
             if (!board.isCellEmpty(row, col)) {
                 System.out.println("Feld bereits belegt! Bitte erneut wählen.");
                 continue;
