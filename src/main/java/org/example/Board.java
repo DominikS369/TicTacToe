@@ -15,12 +15,14 @@ public class Board {
     }
 
     public void place(int x, int y, char marker){
-        if (x < 0 || y > 2 || x < 0 || y > 2) {
-            System.out.println("Ungültige Eingabe! Werte müssen zwischen 0 und 2 liegen.");
-            if (!this.isCellEmpty(x, y)) {
-                System.out.println("Feld bereits belegt! Bitte erneut wählen.");
+        if (x >= 0 && x <= 2 && y >= 0 && y <= 2) {
+            if (this.isCellEmpty(x, y)) {
                 cells[x][y] = marker;
+            }else {
+                System.out.println("Feld bereits belegt! Bitte erneut wählen.");
             }
+        }else {
+            System.out.println("Ungültige Eingabe! Werte müssen zwischen 0 und 2 liegen.");
         }
     }
 
