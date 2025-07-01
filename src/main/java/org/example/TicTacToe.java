@@ -83,4 +83,15 @@ public class TicTacToe {
         return false;
     }
 
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
 }
