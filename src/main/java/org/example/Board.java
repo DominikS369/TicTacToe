@@ -11,10 +11,7 @@ public class Board {
     }
 
     public boolean isCellEmpty(int x, int y){
-        if(x < 3 && x >= 0 && y < 3 && y >= 0){
-            return cells[x][y] != 'x' && cells[x][y] != 'o';
-        }
-        return false;
+        return cells[x][y] == '\0';
     }
 
     public void place(int x, int y, char marker){
@@ -34,7 +31,7 @@ public class Board {
 
     public void clear(){
         for (int i = 0; i < cells.length; i++) {
-            Arrays.fill(cells[i], '0');
+            Arrays.fill(cells[i], '\0');
         }
     }
 
@@ -46,7 +43,7 @@ public class Board {
             System.out.print("|");
             for (int j = 0; j < cells[i].length; j++) {
                 System.out.print(" " +
-                        (cells[i][j] != 'x' || cells[i][j] != 'o' ? " " : cells[i][j]) + " |");
+                        (cells[i][j] != 'x' && cells[i][j] != 'o' ? " " : cells[i][j]) + " |");
             }
             System.out.println();
             System.out.println(lines);
