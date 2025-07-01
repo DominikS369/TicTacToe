@@ -14,8 +14,6 @@ public class TicTacToe {
         this.board = board;
     }
     public void start(){
-
-
     }
     private void switchCurrentPlayer(){
         if(currentPlayer == player1){

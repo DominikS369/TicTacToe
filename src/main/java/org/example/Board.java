@@ -39,7 +39,16 @@ public class Board {
     }
 
     public void print(){
+        String lines = "-------------";
         System.out.println("Current Board:");
-        System.out.println(cells.toString()); //Muss noch geupgradet werden
+        System.out.println(lines);
+        for (int i = 0; i < cells.length; i++) {
+            System.out.print("|");
+            for (int j = 0; j < cells[i].length; j++) {
+                System.out.print(" " + (cells[i][j] != 'x' || cells[i][j] != 'o' ? " " : cells[i][j]) + " |");
+            }
+            System.out.println();
+            System.out.println(lines);
+        }
     }
 }
