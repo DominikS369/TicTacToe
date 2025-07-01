@@ -49,4 +49,8 @@ public class Board {
             System.out.println(lines);
         }
     }
+
+    public char getCell(int row, int col) {
+        return cells[row][col];
+    }
 }
